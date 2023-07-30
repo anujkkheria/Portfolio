@@ -14,7 +14,7 @@ const Home:React.FC = () => {
             dream, a dream to change enhance and develop hoe we precive world 
             </span>
             </p>
-            <blockquote className='italic leading-4 text-red-500'> 
+            <blockquote className='italic leading-4 text-red-500 m-10'> 
                 "Faliure dares not cross paths with a person who dares not to give up"
                 </blockquote>
         </div>
