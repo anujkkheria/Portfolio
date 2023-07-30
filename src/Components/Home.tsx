@@ -10,8 +10,8 @@ const Home:React.FC = () => {
         <h2 className='Welcome text-6xl text-blue-600 m-10'>
             Welcome,
         </h2>
-        <p className='m-10 leading-8'>I am Anuj Kumar Kheria,  I am a Web Developer, CyberSecurity Enthusiast. I love Writing fiction and poetery and reading books, I have a <span>
-            dream, a dream to change enhance and develop hoe we precive world 
+        <p className='m-10 leading-8'>I am Anuj Kumar Kheria,  I am a Web Developer, CyberSecurity Enthusiast. I love Writing fiction and poetry and reading books, I have a <span>
+            dream, a dream to change enhance and develop how we precive world 
             </span>
             </p>
             <blockquote className='italic leading-4 text-red-500 m-10'> 
