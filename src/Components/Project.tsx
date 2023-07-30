@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Project = () => {
+const Project:React.FC = () => {
   return (
     <div>Project</div>
   )
