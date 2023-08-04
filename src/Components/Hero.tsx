@@ -12,7 +12,7 @@ const Hero:React.FC = () => {
         Welcome
         </h1> 
         </div>
-        <div className=' text-white absolute sm:-bottom-3 lg: sm:right-3  bg-blue-600 '>I am <div className='inline-block h-6 pr-2 bg-white overflow-y-hidden pl-1'><ul className='dynamic bg-white text-blue-600 inline-block font-bold overflow-y-hidden leading-6 pl-1'>
+        <div className=' text-white absolute -bottom-3 right-3 sm:-bottom-3 lg: sm:right-3  bg-blue-600 '>I am <div className='inline-block h-6 pr-2 bg-white overflow-y-hidden pl-1'><ul className='dynamic bg-white text-blue-600 inline-block font-bold overflow-y-hidden leading-6 pl-1'>
         <li>Anuj</li>
         <li>a Developer</li>
         <li>a Web Designer</li>
