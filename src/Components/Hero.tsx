@@ -1,28 +1,19 @@
 import React from 'react'
-import { Instagram, Facebook,LinkedIn,GitHub} from '@mui/icons-material'
+import anuj from '../assets/anuj.jpg'
 const Hero:React.FC = () => {
   return (
-    <div className='grid grid-cols-3 grid-rows-3 bg-blue-600 h-[92vh] p-2'>
-        <a className='col-span-1 justify-self-start'><Instagram sx={{width:50,height:50,fill:'#f5f5f5'}}/></a>
-        <div className='col-span-2 justify-self-end'><Facebook sx={{ width:50,height:50,fill:'#f5f5f5'}}/></div>
-        <div className=' col-span-6 relative border-4 w-9/12 h-3/5 justify-self-center text-center   flex  border-white justify-center'>
-        <div className=' place-self-center flex justify-center items-center overflow-hidden p-10 place-center'>
-        <h1 className='text-white text-[3rem]  welcome'>
-        Welcome
-        </h1> 
+    <div className='hero container flex flex-col gap-4 content-center items-center justify-center min-w-full h-[100%]'>
+       <div className='img-container h-[40%] w-[80%] sm:h-50 sm:w-80  relative flex justify-center items-center '>
+        <div className='img-bg lg:h-[108%] lg:w-[100%] h-full w-full border-4 border-rose-500 absolute z-0 flex justify-center rounded-full  content-center'>
         </div>
-        <div className=' text-white absolute -bottom-3 right-3 sm:-bottom-3 lg: sm:right-3  bg-blue-600 '>I am <div className='inline-block h-6 pr-2 bg-white overflow-y-hidden pl-1'><ul className='dynamic bg-white text-blue-600 inline-block font-bold overflow-y-hidden leading-6 pl-1'>
-        <li>Anuj</li>
-        <li>a Developer</li>
-        <li>a Web Designer</li>
-        <li>a Programmer</li>
-        </ul>
+          <img src={anuj} alt="anuj" className='lg:h-[100%] lg:w-[95%] w-[95%] h-[95%] z-10 p-4 rounded-full' />
+       </div>
+       <h1 className='gradient-text Welcome'>Welcome</h1>
+      <p className=' ml-[50%] font-bold text-xl'>
+         I am Anuj Kumar Kheria, I am a Web developer, designer. I have a dream a dream to change enhance and develop ways how we preceive the world around us 
+        </p>
         </div>
-        </div>
-        </div>
-        <div className='col-span-1 self-end'><LinkedIn sx={{width:50,height:50,color:"#f5f5f5"}}/></div>
-        <div className='col-span-2 place-self-end'><GitHub sx={{width:50,height:50,color:"#f5f5f5"}}/></div>
-        </div>
+        
   )
 }
 

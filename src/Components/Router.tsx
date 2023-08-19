@@ -1,5 +1,6 @@
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import App from '../App'
+import Skills from './Skills'
 import Hero from './Hero'
 import Project from './Project'
 import Contact from './Contact'
@@ -13,6 +14,10 @@ const Router = () => {
                 {
                 path:"/",
                 element:<Hero/>
+            },
+            {
+                path:"/skills",
+                element: <Skills/>
             },
             {
                 path : "/Projects",

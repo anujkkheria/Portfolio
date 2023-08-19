@@ -1,6 +1,6 @@
 import React from 'react'
-import { Drawer,List } from '@mui/material'
-
+import { Drawer,List,ListItem } from '@mui/material'
+import { Link } from 'react-router-dom'
  
 const SideBar:React.FC = () => {
   return (
@@ -8,18 +8,42 @@ const SideBar:React.FC = () => {
     anchor='right'
     sx={{
         flexShrink: 0,
+
         [`& .MuiDrawer-paper`]: {
-            mt:'3.5rem',
-            width:'20vw',
-            backgroundColor:'#2363EB',
+            mt:"4.5%",
+            minWidth:"2vw",
+            p:4,
+            backgroundColor:'#fff',
             boxSizing: "border-box",
             }
         }}>
             <List>
-    <span className='text-white'>SideBar</span>
+    <span className='text-blue-600'>SideBar</span>
+    <ListItem >
+     <Link to="/">
+     Home
+     </Link> 
+    </ListItem>
+    <ListItem>
+      <Link to="skills">
+Skills
+      </Link>
+    </ListItem>
+    <ListItem>
+<Link to="Projects">
+      Projects
+</Link>
+    </ListItem>
+    <ListItem>
+      <Link to="contact me">
+      Contact
+      </Link>
+    </ListItem>
           </List>
     </Drawer>
   )
 }
 
+
 export default SideBar
+// backgroundColor:'#2363EB

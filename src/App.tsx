@@ -8,7 +8,7 @@ const App:React.FC = () => {
     setSidebar(!isSidebarOpen)
   }
   return (
-    <div className='App-container h-[100vh] p-1 bg-blue-600'>
+    <div className='App-container h-[100vh]  bg-white'>
     <Header ToggleSidebar={ToggleSidebar}/>
    {isSidebarOpen && <SideBar />}
    <Outlet />

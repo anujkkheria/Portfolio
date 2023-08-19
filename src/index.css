@@ -1,29 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@keyframes slidein{
-    to{
-        transform: translateY(0%)
+/* Slate-900-0f712a slate-300-cbd5el */
+
+@keyframes rotate-bg {
+    0%{
+        transform: rotate(0deg)
     }
+    100%{
+        transform:rotate(360deg)
+    }
+    
 }
-@keyframes moveup{
-    20% {
-transform: translateY(-25%);
-} 
-40%{
-    transform:translateY(-50%)
+
+.hero{
+    background: linear-gradient(to top left, #f1f1ef 50%,#010101 50%);
 }
-60%{
-    transform:translateY(-75%)
+
+.img-bg{
+    background:linear-gradient(to bottom right,#f1f1ef 50% , #010101 50%);
+    animation: rotate-bg  8s linear infinite;
 }
-95%{
-    transform:translateY(0%)
+
+
+.gradient-text{
+    margin-left: 50%;
+    font-weight: bold;
 }
-}
-.welcome{
-    transform:translateY(150%);
-    animation: slidein 3s forwards ease-in-out;
-}
-.dynamic{
-    animation: moveup 8s forwards ease-in infinite;
+.Welcome{
+    font-size: 1.5em;
 }
