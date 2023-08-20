@@ -1,8 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Drawer,List,ListItem } from '@mui/material'
 import { Link } from 'react-router-dom'
  
 const SideBar:React.FC = () => {
+//  const [isActive,setIsActive]= useState<any>(0)
+//   const LinkItems =[
+//   {
+
+//  }
+// ]
   return (
     <Drawer  variant='permanent'
     anchor='right'
@@ -19,7 +25,7 @@ const SideBar:React.FC = () => {
         }}>
             <List>
     <span className='text-blue-600'>SideBar</span>
-    <ListItem >
+    <ListItem>
      <Link to="/">
      Home
      </Link> 
