@@ -1,14 +1,27 @@
 import React, {useState} from 'react'
-import { Drawer,List,ListItem } from '@mui/material'
+import { Drawer,List,ListItemButton } from '@mui/material'
 import { Link } from 'react-router-dom'
  
 const SideBar:React.FC = () => {
-//  const [isActive,setIsActive]= useState<any>(0)
-//   const LinkItems =[
-//   {
-
-//  }
-// ]
+ const [isActive,setIsActive]= useState<any>(0)
+  const LinkItems =[
+  {
+    label:"Home",
+    link:"/"
+ },
+  {
+    label:"Skills",
+    link:"Skills"
+ },
+  {
+    label:"Projects",
+    link:"Projects"
+ },
+  {
+    label:"Contact me",
+    link:"contact me"
+ },
+]
   return (
     <Drawer  variant='permanent'
     anchor='right'
@@ -25,26 +38,11 @@ const SideBar:React.FC = () => {
         }}>
             <List>
     <span className='text-blue-600'>SideBar</span>
-    <ListItem>
-     <Link to="/">
-     Home
+    {LinkItems.map((item,index)=>{return(<ListItemButton selected={isActive===index} onClick={()=>setIsActive(index)}>
+     <Link to={item.link}>
+     {item.label}
      </Link> 
-    </ListItem>
-    <ListItem>
-      <Link to="skills">
-Skills
-      </Link>
-    </ListItem>
-    <ListItem>
-<Link to="Projects">
-      Projects
-</Link>
-    </ListItem>
-    <ListItem>
-      <Link to="contact me">
-      Contact
-      </Link>
-    </ListItem>
+    </ListItemButton>)})}
           </List>
     </Drawer>
   )
