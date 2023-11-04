@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Menu } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Free_Sample_By_Wix.jpg";
 import { AppBar, IconButton, List, ListItemButton } from "@mui/material";
 const Header: React.FC<any> = ({ ToggleSidebar, MenuItems }) => {
-  const [Mobile, setIsMobile] = useState(0);
   const [isActive, setIsActive] = useState<number>(0);
-  useEffect(() => {
-    screen.width < 700 ? setIsMobile(1) : setIsMobile(0);
-    console.log(Mobile);
-  }, []);
+
   return (
     <AppBar
       sx={{
@@ -19,9 +15,10 @@ const Header: React.FC<any> = ({ ToggleSidebar, MenuItems }) => {
         alignContent: "center",
         height: "10vh",
         backgroundColor: "#010101",
+        boxSizing: "border-box",
       }}
     >
-      <img src={Logo} alt="Logo" className="self-center w-24" />
+      <img src={Logo} alt="Logo" className="self-center w-20 box-border" />
       <div className="flex  items-center sm:hidden">
         <IconButton onClick={() => ToggleSidebar()}>
           <Menu sx={{ fill: "#F6F6f6" }} />
