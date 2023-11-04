@@ -15,7 +15,7 @@ const Header: React.FC<any> = ({ ToggleSidebar, MenuItems }) => {
         alignContent: "center",
         height: "10vh",
         backgroundColor: "#010101",
-        boxSizing: "border-box",
+        overflow: "hidden",
       }}
     >
       <img src={Logo} alt="Logo" className="self-center w-16 box-border" />
