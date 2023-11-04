@@ -18,7 +18,7 @@ const Header: React.FC<any> = ({ ToggleSidebar, MenuItems }) => {
         boxSizing: "border-box",
       }}
     >
-      <img src={Logo} alt="Logo" className="self-center w-20 box-border" />
+      <img src={Logo} alt="Logo" className="self-center w-16 box-border" />
       <div className="flex  items-center sm:hidden">
         <IconButton onClick={() => ToggleSidebar()}>
           <Menu sx={{ fill: "#F6F6f6" }} />
