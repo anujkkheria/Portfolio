@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Drawer,
   List,
@@ -9,9 +9,12 @@ import {
 import { Close } from "@mui/icons-material";
 import { Link as link } from "react-router-dom";
 
-const SideBar: React.FC<any> = ({ LinkItems, setSidebar }) => {
-  const [isActive, setIsActive] = useState<any>(0);
-
+const SideBar: React.FC<any> = ({
+  LinkItems,
+  setSidebar,
+  activePage,
+  setActivePage,
+}) => {
   return (
     <ClickAwayListener
       mouseEvent={"onMouseDown"}
@@ -43,12 +46,12 @@ const SideBar: React.FC<any> = ({ LinkItems, setSidebar }) => {
           {LinkItems.map((item: any, index: number) => {
             return (
               <ListItemButton
-                key={item.label}
+                key={index}
                 component={link}
-                selected={isActive === index}
+                selected={activePage === item.link}
                 onClick={() => {
                   console.log(index);
-                  setIsActive(index);
+                  setActivePage(item.link);
                 }}
                 to={item.link}
               >

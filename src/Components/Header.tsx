@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Menu } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Free_Sample_By_Wix.jpg";
 import { AppBar, IconButton, List, ListItemButton } from "@mui/material";
-const Header: React.FC<any> = ({ ToggleSidebar, MenuItems }) => {
-  const [isActive, setIsActive] = useState<number>(0);
-
+const Header: React.FC<any> = ({
+  ToggleSidebar,
+  MenuItems,
+  activePage,
+  setActivePage,
+}) => {
   return (
     <AppBar
       sx={{
@@ -26,14 +29,14 @@ const Header: React.FC<any> = ({ ToggleSidebar, MenuItems }) => {
       </div>
       <div className="w-[50rem] self-center hidden sm:block">
         <List sx={{ display: "flex" }}>
-          {MenuItems.map((Item: any, index: number) => {
+          {MenuItems.map((Item: any) => {
             return (
               <ListItemButton
                 component={Link}
                 to={Item.link}
                 key={Item.label}
-                selected={isActive === index}
-                onClick={() => setIsActive(index)}
+                selected={activePage === Item.link}
+                onClick={() => setActivePage(Item.link)}
                 sx={{
                   display: "flex",
                   justifyContent: "center",

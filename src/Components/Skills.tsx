@@ -123,7 +123,7 @@ const Skills: React.FC = () => {
               <div className=" flex mx-auto flex-col flex-grow-0 gap-10">
                 {Skill.Skills.map((skill) => {
                   return (
-                    <div className="flex gap-5 items-center">
+                    <div key={skill.name} className="flex gap-5 items-center">
                       <img
                         src={skill.icon}
                         alt={skill.name}

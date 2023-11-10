@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Header from "./Components/Header";
 import SideBar from "./Components/SideBar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 const App: React.FC = () => {
   const [isSidebarOpen, setSidebar] = useState(false);
+  const [activePage, setActivePage] = useState(useLocation().pathname);
+
   const ToggleSidebar = () => {
-    setSidebar(!isSidebarOpen);
+    setSidebar((prev) => !prev);
   };
   const LinkItems = [
     {
@@ -14,22 +16,33 @@ const App: React.FC = () => {
     },
     {
       label: "Skills",
-      link: "Skills",
+      link: "/Skills",
     },
     {
       label: "Projects",
-      link: "Projects",
+      link: "/Projects",
     },
     {
       label: "Contact me",
-      link: "contact me",
+      link: "/contact me",
     },
   ];
+
   return (
     <div className="App-container h-screen w-full bg-white">
-      <Header ToggleSidebar={ToggleSidebar} MenuItems={LinkItems} />
+      <Header
+        ToggleSidebar={ToggleSidebar}
+        MenuItems={LinkItems}
+        activePage={activePage}
+        setActivePage={setActivePage}
+      />
       {isSidebarOpen && (
-        <SideBar LinkItems={LinkItems} setSidebar={setSidebar} />
+        <SideBar
+          LinkItems={LinkItems}
+          setSidebar={setSidebar}
+          activePage={activePage}
+          setActivePage={setActivePage}
+        />
       )}
       <Outlet />
     </div>
