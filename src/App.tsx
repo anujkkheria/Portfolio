@@ -26,7 +26,7 @@ const App: React.FC = () => {
     },
   ];
   return (
-    <div className="App-container container h-screen w-screen bg-white">
+    <div className="App-container h-screen w-full bg-white">
       <Header ToggleSidebar={ToggleSidebar} MenuItems={LinkItems} />
       {isSidebarOpen && (
         <SideBar LinkItems={LinkItems} setSidebar={setSidebar} />

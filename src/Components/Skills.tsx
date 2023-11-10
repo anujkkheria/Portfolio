@@ -105,7 +105,7 @@ const Skills: React.FC = () => {
             <Card
               key={Skill.Category}
               sx={{
-                width: "35rem",
+                width: { xs: "25rem", sm: "35rem" },
                 display: "flex",
                 gap: 2,
                 flexDirection: "column",
@@ -113,13 +113,14 @@ const Skills: React.FC = () => {
                 mb: 2,
                 height: "50%",
                 p: 2,
+                boxSizing: "border-box",
               }}
               elevation={3}
             >
               <h2 className=" m-5 mb-6 text-4xl border-b-4  border-b-blue-600">
                 {Skill.Category}
               </h2>
-              <div className=" flex flex-col flex-grow-0 gap-10">
+              <div className=" flex mx-auto flex-col flex-grow-0 gap-10">
                 {Skill.Skills.map((skill) => {
                   return (
                     <div className="flex gap-5 items-center">

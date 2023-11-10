@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Drawer, List, ListItemButton, ClickAwayListener } from "@mui/material";
+import {
+  Drawer,
+  List,
+  ListItemButton,
+  ClickAwayListener,
+  IconButton,
+} from "@mui/material";
+import { Close } from "@mui/icons-material";
 import { Link as link } from "react-router-dom";
 
 const SideBar: React.FC<any> = ({ LinkItems, setSidebar }) => {
@@ -10,7 +17,7 @@ const SideBar: React.FC<any> = ({ LinkItems, setSidebar }) => {
       mouseEvent={"onMouseDown"}
       touchEvent={"onTouchStart"}
       onClickAway={() => {
-        setSidebar((prev: boolean) => !prev);
+        setSidebar(false);
       }}
     >
       <Drawer
@@ -19,7 +26,6 @@ const SideBar: React.FC<any> = ({ LinkItems, setSidebar }) => {
         sx={{
           flexShrink: 0,
           [`& .MuiDrawer-paper`]: {
-            mt: "4rem",
             minWidth: "2vw",
             p: 4,
             backgroundColor: "#fff",
@@ -27,6 +33,12 @@ const SideBar: React.FC<any> = ({ LinkItems, setSidebar }) => {
           },
         }}
       >
+        <IconButton
+          disableRipple
+          onClick={() => setSidebar((prev: boolean) => !prev)}
+        >
+          <Close />
+        </IconButton>
         <List>
           {LinkItems.map((item: any, index: number) => {
             return (
