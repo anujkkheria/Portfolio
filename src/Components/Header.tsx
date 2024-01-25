@@ -1,7 +1,6 @@
 import React from "react";
 import { Menu } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import Logo from "../assets/Free_Sample_By_Wix.jpg";
 import { AppBar, IconButton, List, ListItemButton } from "@mui/material";
 const Header: React.FC<any> = ({
   ToggleSidebar,
@@ -17,11 +16,18 @@ const Header: React.FC<any> = ({
         justifyContent: "space-between",
         alignContent: "center",
         height: "10vh",
-        backgroundColor: "#010101",
+        backgroundColor: "#2563eb",
         overflow: "hidden",
+        position: "relative",
       }}
     >
-      <img src={Logo} alt="Logo" className="self-center w-16 box-border" />
+      <div className="flex justify-center items-center w-1/2">
+        <div className="w-10 h-10 p-10 bg-gradient-to-r from-blue-700 to-blue-600 rounded-full flex justify-center items-center shadow-lg">
+          <h1>
+            AK<sup>2</sup>
+          </h1>
+        </div>
+      </div>
       <div className="flex  items-center sm:hidden">
         <IconButton onClick={() => ToggleSidebar()}>
           <Menu sx={{ fill: "#F6F6f6" }} />

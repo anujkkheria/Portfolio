@@ -1,4 +1,7 @@
+//Imports
 import React from "react";
+import { animate, motion } from "framer-motion";
+// Assets
 import C from "../assets/icons8-c.svg";
 import sql from "../assets/mysql-ar21.svg";
 import java from "../assets/java-14.svg";
@@ -13,35 +16,9 @@ import material from "../assets/material-ui-2.svg";
 import TypeScript from "../assets/typescript.svg";
 import redux from "../assets/redux-action.svg";
 import python from "../assets/python-5.svg";
-import { Card } from "@mui/material";
 
 const Skills: React.FC = () => {
   const skillsDetail = [
-    {
-      Category: "Programming Languages",
-      Skills: [
-        {
-          name: "TypeScript",
-          icon: TypeScript,
-        },
-        {
-          name: "JavaScript",
-          icon: Js,
-        },
-        {
-          name: "Python",
-          icon: python,
-        },
-        {
-          name: "Java",
-          icon: java,
-        },
-        {
-          name: "C/C++",
-          icon: C,
-        },
-      ],
-    },
     {
       Category: "Frontend",
       Skills: [
@@ -64,6 +41,31 @@ const Skills: React.FC = () => {
         {
           name: "Material UI",
           icon: material,
+        },
+      ],
+    },
+    {
+      Category: "Programming Languages",
+      Skills: [
+        {
+          name: "TypeScript",
+          icon: TypeScript,
+        },
+        {
+          name: "JavaScript",
+          icon: Js,
+        },
+        {
+          name: "Python",
+          icon: python,
+        },
+        {
+          name: "Java",
+          icon: java,
+        },
+        {
+          name: "C/C++",
+          icon: C,
         },
       ],
     },
@@ -94,52 +96,40 @@ const Skills: React.FC = () => {
       ],
     },
   ];
+
   return (
-    <div>
-      <h1 className=" mt-28 mb-10 border-b-4 text-5xl w-28 mx-auto block border-b-blue-600">
-        Skills
-      </h1>
-      <div className="flex justify-center flex-wrap gap-3">
-        {skillsDetail.map((Skill) => {
-          return (
-            <Card
-              key={Skill.Category}
-              sx={{
-                width: { xs: "25rem", sm: "35rem" },
-                display: "flex",
-                gap: 2,
-                flexDirection: "column",
-                alignItems: "center",
-                mb: 2,
-                height: "50%",
-                p: 2,
-                boxSizing: "border-box",
-              }}
-              elevation={3}
-            >
-              <h2 className=" m-5 mb-6 text-4xl border-b-4  border-b-blue-600">
-                {Skill.Category}
-              </h2>
-              <div className=" flex mx-auto flex-col flex-grow-0 gap-10">
-                {Skill.Skills.map((skill) => {
-                  return (
-                    <div key={skill.name} className="flex gap-5 items-center">
-                      <img
-                        src={skill.icon}
-                        alt={skill.name}
-                        width={"65rem"}
-                        height={"65rem"}
-                      />
-                      <h3 className=" text-3xl">{skill.name}</h3>
-                    </div>
-                  );
-                })}
-              </div>
-            </Card>
-          );
-        })}
-      </div>
-    </div>
+    <motion.div className="p-5">
+      {skillsDetail.map((Skill, i) => {
+        return (
+          <motion.div
+            className=""
+            initial={{ opacity: 0, translateY: 100 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            transition={{ duration: 0.5, delay: i * 0.5 }}
+          >
+            <div className="heading flex flex-col justify-center items-center">
+              <h2 className=" text-3xl text-center p-2">{Skill.Category}</h2>
+              <span className="border-2 border-solid border-blue-600 w-1/4 block"></span>
+            </div>
+            <div className="flex justify-evenly p-10">
+              {Skill.Skills.map((skill, i) => {
+                return (
+                  <motion.div
+                    className=" flex flex-col p-10 justify-center gap-4 items-center w-1/4 h-1/4 shadow-xl"
+                    initial={{ opacity: 0, translateY: 100 }}
+                    animate={{ opacity: 1, translateY: 0 }}
+                    transition={{ duration: 1, delay: i * 0.5 }}
+                  >
+                    <img src={skill.icon} alt="" className="w-20 h-16" />
+                    <h3 className="">{skill.name}</h3>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
+        );
+      })}
+    </motion.div>
   );
 };
 
