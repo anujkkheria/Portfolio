@@ -1,6 +1,6 @@
 //Imports
 import React from "react";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 // Assets
 import C from "../assets/icons8-c.svg";
 import sql from "../assets/mysql-ar21.svg";

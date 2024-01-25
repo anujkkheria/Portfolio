@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
           </div>
           <div className="Blogs flex flex-col max-h-1/2 overflow-y-scroll overflow-x-clip p-5 items-center justify-between">
             {BlogsList.map((blog) => {
-              return <Blogs />;
+              return <Blogs blog={blog} />;
             })}
           </div>
         </div>
