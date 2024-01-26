@@ -111,11 +111,11 @@ const Skills: React.FC = () => {
               <h2 className=" text-3xl text-center p-2">{Skill.Category}</h2>
               <span className="border-2 border-solid border-blue-600 w-1/4 block"></span>
             </div>
-            <div className="flex justify-evenly p-10">
+            <div className="flex justify-center gap-2 p-10">
               {Skill.Skills.map((skill, i) => {
                 return (
                   <motion.div
-                    className=" flex flex-col p-10 justify-center gap-4 items-center w-1/4 h-1/4 shadow-xl"
+                    className=" flex flex-col p-10 justify-center items-center w-64 h-1/4 shadow-xl"
                     initial={{ opacity: 0, translateY: 100 }}
                     animate={{ opacity: 1, translateY: 0 }}
                     transition={{ duration: 1, delay: i * 0.5 }}
