@@ -9,11 +9,11 @@ const Hero: React.FC = () => {
     <div className="w-full h-[90%] flex items-center justify-evenly ">
       {/* <nav className="w-full h-14 bg-black">Navbar</nav> */}
       <div className=" w-1/4 h-1/2 mx-auto shadow-xl border border-black bg-gradient-to-b from-30% from-blue-600 to-20% to-white flex flex-col justify-around items-center">
-        <div className="mt-4">
+        <div className="mt-4 border-[0.5rem] shadow-lg border-white rounded-full  ">
           <img
             src={anuj}
             alt=""
-            className=" w-40 h-40  border-2 bg-black border-emerald-600 rounded-full"
+            className=" w-40 h-40 rounded-full shadow-lg"
           />
         </div>
         <div className=" text-center">

@@ -20,31 +20,6 @@ import python from "../assets/python-5.svg";
 const Skills: React.FC = () => {
   const skillsDetail = [
     {
-      Category: "Frontend",
-      Skills: [
-        {
-          name: "React",
-          icon: react,
-        },
-        {
-          name: "HTML",
-          icon: Html,
-        },
-        {
-          name: "CSS",
-          icon: css,
-        },
-        {
-          name: "Redux",
-          icon: redux,
-        },
-        {
-          name: "Material UI",
-          icon: material,
-        },
-      ],
-    },
-    {
       Category: "Programming Languages",
       Skills: [
         {
@@ -66,6 +41,31 @@ const Skills: React.FC = () => {
         {
           name: "C/C++",
           icon: C,
+        },
+      ],
+    },
+    {
+      Category: "Frontend",
+      Skills: [
+        {
+          name: "React",
+          icon: react,
+        },
+        {
+          name: "HTML",
+          icon: Html,
+        },
+        {
+          name: "CSS",
+          icon: css,
+        },
+        {
+          name: "Redux",
+          icon: redux,
+        },
+        {
+          name: "Material UI",
+          icon: material,
         },
       ],
     },

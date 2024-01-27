@@ -13,7 +13,7 @@ const Header: React.FC<any> = ({
       sx={{
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between",
+        justifyContent: "space-around",
         alignContent: "center",
         height: "10vh",
         backgroundColor: "#2563eb",
@@ -22,7 +22,7 @@ const Header: React.FC<any> = ({
       }}
     >
       <div className="flex justify-center items-center w-1/2">
-        <div className="w-10 h-10 p-10 bg-gradient-to-r from-blue-700 to-blue-600 rounded-full flex justify-center items-center shadow-lg">
+        <div className="w-10 h-10 p-8 bg-gradient-to-tr from-blue-600 to-blue-300 rounded-full flex justify-center items-center shadow-lg">
           <h1>
             AK<sup>2</sup>
           </h1>
@@ -33,15 +33,21 @@ const Header: React.FC<any> = ({
           <Menu sx={{ fill: "#F6F6f6" }} />
         </IconButton>
       </div>
-      <div className="w-[50rem] self-center hidden sm:block">
-        <List sx={{ display: "flex" }}>
+      <div className="w-1/2 self-center hidden sm:block">
+        <List
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           {MenuItems.map((Item: any) => {
             return (
               <ListItemButton
                 component={Link}
                 to={Item.link}
                 key={Item.label}
-                selected={activePage === Item.link}
+                selected={activePage && activePage === Item.link}
                 onClick={() => setActivePage(Item.link)}
                 sx={{
                   display: "flex",
@@ -53,6 +59,7 @@ const Header: React.FC<any> = ({
                   "&.Mui-selected:hover": {
                     backgroundColor: "#fff",
                     color: "#000",
+                    transition: "delay:0.5",
                   },
                 }}
               >

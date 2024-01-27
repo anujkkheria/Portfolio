@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Components/Header";
 import SideBar from "./Components/SideBar";
 import { Outlet, useLocation } from "react-router-dom";
 const App: React.FC = () => {
   const [isSidebarOpen, setSidebar] = useState(false);
   const [activePage, setActivePage] = useState(useLocation().pathname);
-
   const ToggleSidebar = () => {
     setSidebar((prev) => !prev);
   };
@@ -28,6 +27,9 @@ const App: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    console.log(activePage);
+  }, []);
   return (
     <div className="App-container h-screen w-full box-border  bg-white">
       <Header
