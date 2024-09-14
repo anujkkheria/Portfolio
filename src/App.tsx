@@ -1,37 +1,37 @@
-import React, { useEffect, useState } from "react";
-import Header from "./Components/Header";
-import SideBar from "./Components/SideBar";
-import { Outlet, useLocation } from "react-router-dom";
+import React, { useState } from 'react'
+import Header from './Components/Header'
+import SideBar from './Components/SideBar'
+import { Outlet, useLocation } from 'react-router-dom'
 const App: React.FC = () => {
-  const [isSidebarOpen, setSidebar] = useState(false);
-  const [activePage, setActivePage] = useState(useLocation().pathname);
+  const [isSidebarOpen, setSidebar] = useState(false)
+  const [activePage, setActivePage] = useState(useLocation().pathname)
   const ToggleSidebar = () => {
-    setSidebar((prev) => !prev);
-  };
+    setSidebar((prev) => !prev)
+  }
   const LinkItems = [
     {
-      label: "Home",
-      link: "/",
+      label: 'Home',
+      link: '/',
     },
     {
-      label: "Skills",
-      link: "/Skills",
+      label: 'Skills',
+      link: '/Skills',
     },
     {
-      label: "Projects",
-      link: "/Projects",
+      label: 'Projects',
+      link: '/Projects',
     },
     {
-      label: "Contact me",
-      link: "/contact me",
+      label: 'Contact me',
+      link: '/contact me',
     },
-  ];
+  ]
 
   // useEffect(() => {
   //   console.log(activePage);
   // }, []);
   return (
-    <div className="App-container h-screen w-full box-border  bg-white">
+    <div className='App-container h-screen w-full box-border  bg-white'>
       <Header
         ToggleSidebar={ToggleSidebar}
         MenuItems={LinkItems}
@@ -46,10 +46,9 @@ const App: React.FC = () => {
           setActivePage={setActivePage}
         />
       )}
-            <Outlet />
-      
+      <Outlet />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
