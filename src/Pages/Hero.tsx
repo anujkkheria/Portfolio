@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   console.log(import.meta.env.VITE_API_URL)
 
   return (
-    <div className='w-full h-[90%] flex md:gap-1 justify-center flex-wrap md:flex-nowrap border-8  border-black p-2'>
+    <div className='w-full h-[90%] flex md:gap-1 justify-center flex-wrap md:flex-nowrap p-2'>
       {/* <nav className="w-full h-14 bg-black">Navbar</nav> */}
       <section className='w-full h-full md:w-1/2  flex justify-center items-center'>
         <div className=' w-full h-[90%] md:h-4/5 md:w-3/5   mx-auto shadow-xl bg-gradient-to-b from-30% from-blue-600 to-20% to-white flex flex-col justify-around items-center'>
