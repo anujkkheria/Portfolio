@@ -15,14 +15,14 @@ const Header: React.FC<any> = ({
         flexDirection: "row",
         justifyContent: "space-around",
         alignContent: "center",
-        height: "10vh",
+        height: "10%",
         backgroundColor: "#2563eb",
         overflow: "hidden",
         position: "relative",
       }}
     >
-      <div className="flex justify-center items-center w-1/2">
-        <div className="w-10 h-10 p-8 bg-gradient-to-tr from-blue-600 to-blue-300 rounded-full flex justify-center items-center shadow-lg">
+      <div className="flex md:justify-center items-center w-1/2">
+        <div className="w-3 h-3 p-5 bg-gradient-to-tr from-blue-600 to-blue-300 rounded-full flex justify-center items-center shadow-lg">
           <h1>
             AK<sup>2</sup>
           </h1>

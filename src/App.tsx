@@ -27,9 +27,9 @@ const App: React.FC = () => {
     },
   ];
 
-  useEffect(() => {
-    console.log(activePage);
-  }, []);
+  // useEffect(() => {
+  //   console.log(activePage);
+  // }, []);
   return (
     <div className="App-container h-screen w-full box-border  bg-white">
       <Header
@@ -46,7 +46,8 @@ const App: React.FC = () => {
           setActivePage={setActivePage}
         />
       )}
-      <Outlet />
+            <Outlet />
+      
     </div>
   );
 };

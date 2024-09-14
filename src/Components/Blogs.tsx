@@ -1,13 +1,19 @@
-import React from "react";
-interface blog {
-  blog: any;
-}
-const Blogs: React.FC<blog> = (blog) => {
+import React from 'react'
+import { Typography, Box } from '@mui/material'
+import { Iblogcomp } from '../utils/interfaces'
+const Blogs: React.FC<Iblogcomp> = ({ blog }) => {
+  console.log(blog)
   return (
-    <div className="border border-black w-full h-full p-4 m-2 ">
-      Blogs {`${blog}`}
-    </div>
-  );
-};
+    <Box
+      component={'a'}
+      sx={{ width: '100%', height: '100%' }}
+      href={blog.link}
+    >
+      <div className='border border-black flex items-center w-full h-full text-black text-lg p-4 m-2 '>
+        <Typography sx={{ textAlign: 'center' }}>{blog.title}</Typography>
+      </div>
+    </Box>
+  )
+}
 
-export default Blogs;
+export default Blogs
