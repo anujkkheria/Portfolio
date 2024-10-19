@@ -2,31 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 /* Slate-900-0f712a slate-300-cbd5el */
-
-@keyframes rotate-bg {
-    0%{
-        transform: rotate(0deg)
-    }
-    100%{
-        transform:rotate(360deg)
-    }
-    
-}
-
-.hero{
-    background: linear-gradient(to top left, #f1f1ef 50%,#010101 50%);
-}
-
-.img-bg{
-    background:linear-gradient(to bottom right,#f1f1ef 50% , #010101 50%);
-    animation: rotate-bg  8s linear infinite;
-}
-
-
-.gradient-text{
-    margin-left: 50%;
-    font-weight: bold;
-}
-.Welcome{
-    font-size: 1.5em;
-}

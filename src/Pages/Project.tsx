@@ -1,7 +1,19 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Tours from "../assets/Tours-sample.jpg";
+import { SwipeableDrawer } from "@mui/material";
 import BDremainder from "../assets/BDremainder.jpg";
+
+const Puller = () => {
+  return (
+    <div className="w-8 h-2 rounded mx-auto my-2 border-2 bg-slate-400 ">
+      {" "}
+      -{" "}
+    </div>
+  );
+};
+
+const isMobile = window.screen.width < 640;
 const Project: React.FC = () => {
   const Projects = [
     {
@@ -21,11 +33,12 @@ const Project: React.FC = () => {
       technologiesused: "",
     },
   ];
+  const [isDrawerOpen, toggleDrawer] = useState(false);
   const [currProject, setCurrProject] = useState(Projects[0]);
 
   return (
-    <div className="m-10 flex gap-2">
-      <div>
+    <div className="m-10 flex flex-col sm:flex-row gap-5">
+      <div className="w-full h-full sm:w-1/2">
         <div
           className="w-full
          h-1/2"
@@ -33,7 +46,59 @@ const Project: React.FC = () => {
           <img src={currProject.img} alt="" className="w-15 h-15" />
         </div>
       </div>
-      <div className="w-full h-full">
+      {isMobile && (
+        <SwipeableDrawer
+          onOpen={() => toggleDrawer(true)}
+          onClose={() => toggleDrawer(false)}
+          open={isDrawerOpen}
+          swipeAreaWidth={56}
+          anchor="bottom"
+          keepMounted={true}
+          PaperProps={{
+            sx: {
+              height: "calc(50% - 56px)",
+              overflow: "visible",
+            },
+          }}
+        >
+          <div className="absolute -top-[60px] bg-white w-full border-2 visible right-0 left-0 border-t-2 rounded-t-lg">
+            <Puller />
+            <h1 className="m-2 ">Projects Table </h1>
+          </div>
+          <div className="w-full h-full">
+            <motion.div
+              className="w-full border border-y-2 border-b-black flex justify-around mb-4 py-3"
+              initial={{ translateY: 100, opacity: 0 }}
+              animate={{ translateY: 0, opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
+            >
+              <span className="w-10 text-center">sno</span>
+              <span className="w-20 text-center">preview</span>
+              <span className="w-20 text-center">name</span>
+              <span className="w-20 text-center">Catagory</span>
+            </motion.div>
+            {Projects.map((project, i) => {
+              return (
+                <motion.div
+                  className="w-full h-1/4 border border-y-2 border-y-black flex justify-around  items-center mb-4 py-3"
+                  initial={{ translateY: 100, opacity: 0 }}
+                  animate={{ translateY: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: i * 0.5 }}
+                  onClick={() => setCurrProject({ ...project })}
+                >
+                  <span className="w-10 text-center">{i + 1}</span>
+                  <span className="w-20 h-20 flex items-center">
+                    <img src={project.img} alt="" className="w-15 h-10" />
+                  </span>
+                  <span className="w-20 text-center">{project.name}</span>
+                  <span>{project.Catagory}</span>
+                </motion.div>
+              );
+            })}
+          </div>
+        </SwipeableDrawer>
+      )}
+      <div className="w-1/2 h-full hidden sm:block">
         <motion.div
           className="w-full border border-y-2 border-y-black flex justify-around mb-4 py-3"
           initial={{ translateY: 100, opacity: 0 }}

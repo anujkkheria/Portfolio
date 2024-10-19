@@ -1,25 +1,19 @@
 import React from "react";
-import { TextField, Button } from "@mui/material";
-import { InputStyle } from "../Components/inputStyle";
+import "../Pages/Contact.css";
 const Contact: React.FC = () => {
   return (
-    <div className="flex p-5 justify-center items-center min-h-screen bg-black">
-      <div className="border-4 p-5 border-white flex flex-col gap-5">
-        <TextField label={"email"} sx={{ ...InputStyle }} fullWidth />
-        <TextField
-          label={"Message"}
-          sx={{ ...InputStyle }}
-          multiline
-          minRows={4}
-          fullWidth
-        />
-        <Button
-          variant="outlined"
-          sx={{ "&.MuiButton-root": { borderColor: "#f1f1f1", color: "#fff" } }}
-          color={"secondary"}
-        >
-          Submit
-        </Button>
+    <div className="flex h-[90%] w-full">
+      <div className="flex justify-center items-center w-full">
+        <div>
+          <h2>Thank You !!!</h2>
+          <p>
+            I thank you for spending time here you can contact me via links
+            below
+          </p>
+        </div>
+      </div>
+      <div className="flex justify-center  items-center   w-full">
+        <div className=" gradient-box"> </div>
       </div>
     </div>
   );
