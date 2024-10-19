@@ -6,4 +6,5 @@ export interface blog {
 }
 export interface Iblogcomp {
   blog: blog
+  index: number
 }

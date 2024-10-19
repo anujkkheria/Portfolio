@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+// import { motion } from 'framer-motion'
 import Blogs from './Blogs'
 import { blog } from '../utils/interfaces'
 import axios from '../utils/axios'
@@ -26,11 +26,11 @@ const BlogSection: React.FC<any> = () => {
           className=' border-2 border-solid border-black rounded-3xl px-2 py-1 justify-self-end focus:border-cyan-600'
         />
       </div>
-      <div className='Blogs flex flex-col max-h-1/2 overflow-y-scroll overflow-x-clip p-5 items-center justify-between'>
+      <div className='Blogs flex flex-col max-h-1/2 overflow-y-scroll overflow-x-clip p-5 gap-2 items-center justify-between'>
         {blogsList &&
-          blogsList.map((blog: blog) => {
+          blogsList.map((blog: blog, i: number) => {
             console.log(typeof blog)
-            return <Blogs key={blog.id} blog={blog} />
+            return <Blogs key={blog.id} blog={blog} index={i} />
           })}
       </div>
     </div>
