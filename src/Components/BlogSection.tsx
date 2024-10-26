@@ -18,7 +18,7 @@ const BlogSection: React.FC<any> = () => {
   }, [])
   useEffect(() => console.log(blogsList), [blogsList])
   return (
-    <div className='w-full h-5/6  md:h-4/5 md:w-1/3 shadow-xl border-2 border-black flex flex-col'>
+    <div className='w-full h-5/6  md:h-4/5 shadow-xl border-2 border-black flex flex-col'>
       <div className='flex flex-row-reverse p-2 pl-5'>
         <input
           type='text'

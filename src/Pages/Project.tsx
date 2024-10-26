@@ -21,9 +21,9 @@ const Project: React.FC = () => {
       name: 'Tours',
       Catagory: 'Front-End',
       img: Tours,
-      desc: '',
+      desc: 'This Project is Tour GUide site which takes user through some interesting tours made while learning to code react locations made when intially learning react',
       links: 'https://sample-tours.netlify.app/',
-      technologiesused: '',
+      technologiesused: 'Reactjs',
     },
     {
       name: 'Birthday-Remainder',
@@ -40,8 +40,8 @@ const Project: React.FC = () => {
   return (
     <div className='m-10 flex flex-col sm:flex-row gap-5'>
       <div className='w-full h-full sm:w-1/2 flex flex-col gap-4'>
-        <div className='w-full h-1/2'>
-          <img src={currProject.img} alt='' className='w-15 h-15' />
+        <div className='w-full h-1/3'>
+          <img src={currProject.img} alt='' className='w-15 h-60 mx-auto' />
         </div>
         <ProjectAccordion header={'Description'} detail={currProject.desc} />
         <ProjectAccordion

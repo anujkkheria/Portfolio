@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </section>
-      <section className='h-full w-full md:w-1/2 flex items-center justify-center mx-auto'>
+      <section className='h-full w-full md:w-1/2 md:px-5 flex items-center justify-center mx-auto'>
         <BlogSection />
       </section>
     </div>

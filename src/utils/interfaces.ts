@@ -8,3 +8,8 @@ export interface Iblogcomp {
   blog: blog
   index: number
 }
+
+export interface IAccordion {
+  header: string
+  detail: string
+}

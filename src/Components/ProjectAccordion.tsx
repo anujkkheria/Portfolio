@@ -6,10 +6,10 @@ import {
   AccordionDetails,
   Typography,
 } from '@mui/material'
-
+import { IAccordion } from '../utils/interfaces'
 import { ArrowDropDown } from '@mui/icons-material'
 
-const ProjectAccordion = ({ header, detail }) => {
+const ProjectAccordion: React.FC<IAccordion> = ({ header, detail }) => {
   return (
     <Accordion>
       <AccordionSummary
