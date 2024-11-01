@@ -22,16 +22,16 @@ const Project: React.FC = () => {
       Catagory: 'Front-End',
       img: Tours,
       desc: 'This Project is Tour GUide site which takes user through some interesting tours made while learning to code react locations made when intially learning react',
-      links: 'https://sample-tours.netlify.app/',
-      technologiesused: 'Reactjs',
+      livelink: 'https://sample-tours.netlify.app/',
+      technologiesused: ['Reactjs'],
     },
     {
       name: 'Birthday-Remainder',
       Catagory: 'Front-End',
       img: BDremainder,
-      desc: '',
-      link: 'https://anuj-birthday-reminder.netlify.app/',
-      technologiesused: '',
+      desc: 'A very simple state management example using use State hook made during learning',
+      livelink: 'https://anuj-birthday-reminder.netlify.app/',
+      technologiesused: ['Reactjs'],
     },
   ]
   const [isDrawerOpen, toggleDrawer] = useState(false)
@@ -43,10 +43,11 @@ const Project: React.FC = () => {
         <div className='w-full h-1/3'>
           <img src={currProject.img} alt='' className='w-15 h-60 mx-auto' />
         </div>
-        <ProjectAccordion header={'Description'} detail={currProject.desc} />
         <ProjectAccordion
-          header={'Technology Used'}
-          detail={currProject.technologiesused}
+          title={currProject.name}
+          description={currProject.desc}
+          technologies={currProject.technologiesused}
+          liveLink={currProject.livelink}
         />
       </div>
       {isMobile && (
